@@ -1,0 +1,157 @@
+# Root ignores for the project
+
+# ---- General ----
+*.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+.env
+.env.*.local
+
+
+# ---- Node / Vite (client) ----
+client/node_modules/
+client/dist/
+client/.vite/
+client/coverage/
+client/.eslintcache
+
+# If you add a server-side Node project later
+server/node_modules/
+server/dist/
+
+# ---- .NET (scoped to server/) ----
+server/**/bin/
+server/**/obj/
+server/**/TestResults/
+server/**/node_modules/
+server/**/packages/*
+server/**/packages.lock.json
+server/**/project.lock.json
+server/**/project.fragment.lock.json
+server/**/artifacts/
+server/**/.vs/
+server/**/*.user
+server/**/*.rsuser
+server/**/.vscode/
+server/**/*.suo
+server/**/*.userosscache
+server/**/*.sln.docstates
+
+# Build outputs
+server/**/*.cache/
+server/**/Generated/\n
+# NuGet
+server/**/global.json.lock
+server/**/nuget.exe
+server/**/NuGet.config
+server/**/Packages/**
+
+# Publish / deploy
+server/**/publish/
+server/**/apphost
+
+# Logs
+server/**/logs/
+server/**/log/
+server/**/trace.log
+server/**/error.log
+
+# Coverage / analysis
+server/**/coverage/
+server/**/coverage.info
+server/**/lcov.info
+server/**/.nyc_output/
+server/**/highlighted
+
+# Cache
+server/**/.sonarqube/
+server/**/.scannerwork/
+server/**/.idea/
+server/**/.nuke/
+
+# Temporary
+server/**/~$*
+server/**/*.tmp
+server/**/*.bak
+server/**/*.orig
+server/**/*.rej
+
+# Rider / JetBrains
+server/**/.idea/
+server/**/*.DotSettings.user
+
+# Azure / publish settings
+server/**/*.Publish.xml
+server/**/*.pubxml
+server/**/*.pubxml.user
+server/**/appsettings.*.local.json
+server/**/secrets.json
+
+# Entity Framework migrations snapshots (if you want to ignore design-time snapshots)
+# server/**/Migrations/**/*.Designer.cs
+
+# Certificates / keys (adjust if you decide to commit dev cert trust files)
+server/**/*.pfx
+server/**/*.snk
+
+# Resharper
+server/**/_ReSharper.Caches/
+
+# SQL / local db
+server/**/*.mdf
+server/**/*.ldf
+server/**/*.ndf
+
+# Docker / container build artifacts
+server/**/Dockerfile.*.tmp
+server/**/.dockerignore.generated
+
+# Tools
+server/**/.tools/
+
+# ---- Misc ----
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Ignore local dev certificates (if using dotnet dev-certs export)
+server/**/localhost*.crt
+server/**/localhost*.key
+
+# Settings
+server/**/appsettings.Development.json
+
+# End of .NET ignores
+
+# Client specific ignores
+
+# Logs
+client/logs
+client/*.log
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/pnpm-debug.log*
+client/lerna-debug.log*
+
+client/node_modules
+client/dist
+client/dist-ssr
+client/*.local
+
+# Editor directories and files
+client/.vscode/*
+!client/.vscode/extensions.json
+client/.idea
+client/.DS_Store
+client/*.suo
+client/*.ntvs*
+client/*.njsproj
+client/*.sln
+client/*.sw?
