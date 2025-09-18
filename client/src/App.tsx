@@ -1,21 +1,18 @@
 import './App.css'
+import Registration from './pages/Registration'
+import UserInfo from './components/UserInfo';
+import MatchHistory from './pages/MatchHistory';
+import MatchReview from './pages/MatchReview';
 
 function App() {
 
   return (
     <>
-      <h1>LoL Coach</h1>
-      <div className="card">
-        <button>
-          Login
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1 className="mb-5">LoL Coach</h1>
+      <Registration />
+      <MatchHistory />
+      <MatchReview  />
+      <UserInfo />
     </>
   )
 }

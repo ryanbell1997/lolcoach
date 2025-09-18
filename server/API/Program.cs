@@ -21,13 +21,26 @@ builder.Services.AddHttpClient<IRiotApi, RiotApi>((serviceProvider, client) =>
     client.DefaultRequestHeaders.Accept.ParseAdd("application/json");
 });
 
+
+// Add CORS policy for local frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy.WithOrigins("http://localhost:5173", "https://lolcoach.net")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+});
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseCors("AllowFrontend");
     app.MapOpenApi();
 }
+
 
 app.UseHttpsRedirection();
 

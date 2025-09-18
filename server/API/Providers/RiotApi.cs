@@ -19,8 +19,10 @@ public class RiotApi(HttpClient httpClient) : IRiotApi
 
         var encodedGame = Uri.EscapeDataString(gameName.Trim());
         var encodedTag = Uri.EscapeDataString(tagLine.Trim());
+        
         var url = $"/riot/account/v1/accounts/by-riot-id/{encodedGame}/{encodedTag}";
         using var response = await _httpClient.GetAsync(url, ct);
+
         if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
         {
             return null; // Not found
